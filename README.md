@@ -9,7 +9,6 @@ UIView+ZZQExtension
 UIView+AlertController
 UIButton+ZZQImagePosition
 UIImage+ZZQExtension 
-
 ```
 
 
@@ -20,13 +19,11 @@ UIImage+ZZQExtension
 ===============
 
 ### CocoaPods
-1. 在Podfile 中添加`pod "ZZQAvatarPicker"`
+1. 在Podfile 中添加`pod "ZZQCommonUtils"`
 2. 执行`pod install`或`pod update`
-3. 导入\<ZZQAvatarPicker.h\>
-4. 添加相应的权限
+3. 导入需要使用的类
 
 ### 手动安装
-1. 下载 ZZQAvatarPicker 源码
-2. 将 ZZQAvatarPicker 中 源文件添加到你的工程
-3. 导入 `ZZQAvatarPicker`
-4. 添加相应的权限
+1. 下载 ZZQCommonUtils 源码
+2. 将 ZZQCommonUtils 中 源文件添加到你的工程
+3. 导入需要使用的类
