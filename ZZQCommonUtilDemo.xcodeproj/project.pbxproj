@@ -19,6 +19,7 @@
 		1D0AA8B721919739009FB9B8 /* UIView+AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA8B021919739009FB9B8 /* UIView+AlertController.m */; };
 		1D0AA8B821919739009FB9B8 /* NSDate+ZZQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA8B221919739009FB9B8 /* NSDate+ZZQExtension.m */; };
 		1D0AA8B921919739009FB9B8 /* UIView+ZZQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA8B321919739009FB9B8 /* UIView+ZZQExtension.m */; };
+		1D64CF742196D572009E5DEF /* UIViewController+ZZQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D64CF732196D572009E5DEF /* UIViewController+ZZQExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		1D0AA8B121919739009FB9B8 /* UIImage+ZZQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZZQExtension.h"; sourceTree = "<group>"; };
 		1D0AA8B221919739009FB9B8 /* NSDate+ZZQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZZQExtension.m"; sourceTree = "<group>"; };
 		1D0AA8B321919739009FB9B8 /* UIView+ZZQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZZQExtension.m"; sourceTree = "<group>"; };
+		1D64CF722196D572009E5DEF /* UIViewController+ZZQExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZZQExtension.h"; sourceTree = "<group>"; };
+		1D64CF732196D572009E5DEF /* UIViewController+ZZQExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZZQExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				1D0AA8AC21919739009FB9B8 /* UIImage+ZZQExtension.m */,
 				1D0AA8AA21919739009FB9B8 /* UIButton+ZZQImagePosition.h */,
 				1D0AA8AF21919739009FB9B8 /* UIButton+ZZQImagePosition.m */,
+				1D64CF722196D572009E5DEF /* UIViewController+ZZQExtension.h */,
+				1D64CF732196D572009E5DEF /* UIViewController+ZZQExtension.m */,
 			);
 			path = ZZQCommonUtils;
 			sourceTree = SOURCE_ROOT;
@@ -183,6 +188,7 @@
 				1D0AA896219196E7009FB9B8 /* ViewController.m in Sources */,
 				1D0AA8A1219196E8009FB9B8 /* main.m in Sources */,
 				1D0AA893219196E7009FB9B8 /* AppDelegate.m in Sources */,
+				1D64CF742196D572009E5DEF /* UIViewController+ZZQExtension.m in Sources */,
 				1D0AA8B821919739009FB9B8 /* NSDate+ZZQExtension.m in Sources */,
 				1D0AA8B921919739009FB9B8 /* UIView+ZZQExtension.m in Sources */,
 				1D0AA8B721919739009FB9B8 /* UIView+AlertController.m in Sources */,
@@ -332,7 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJN5GDHP84;
 				INFOPLIST_FILE = ZZQCommonUtilDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,7 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJN5GDHP84;
 				INFOPLIST_FILE = ZZQCommonUtilDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
