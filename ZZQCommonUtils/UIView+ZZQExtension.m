@@ -156,8 +156,12 @@
 }
 
 
-- (void)border:(CGFloat)borderWidth color:(UIColor *)borderColor {
-    [self rounded:0 width:borderWidth color:borderColor];
+- (void)round:(CGFloat)cornerRadius RectCorners:(UIRectCorner)rectCorner {
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
 }
 
 
@@ -169,18 +173,18 @@
 }
 
 
-- (void)round:(CGFloat)cornerRadius RectCorners:(UIRectCorner)rectCorner {
-    
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-    maskLayer.frame = self.bounds;
-    maskLayer.path = maskPath.CGPath;
-    self.layer.mask = maskLayer;
+- (void)rounded:(CGFloat)cornerRadius andShadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
+    self.layer.cornerRadius = cornerRadius;
+    [self shadow:shadowColor opacity:opacity radius:radius offset:offset];
+}
+
+
+- (void)border:(CGFloat)borderWidth color:(UIColor *)borderColor {
+    [self rounded:0 width:borderWidth color:borderColor];
 }
 
 
 - (void)shadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
-
     self.layer.masksToBounds = NO;
     self.layer.shadowColor = shadowColor.CGColor;
     self.layer.shadowOpacity = opacity;

@@ -57,3 +57,43 @@
 
 @end
 
+
+@implementation UIViewController (Transtion)
+
+- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^)(BOOL))completion {
+    
+    CGRect originRect = fromVC.view.frame;
+    CGRect nowRect = CGRectMake(originRect.origin.x, toVC.view.frame.origin.y, toVC.view.frame.size.width, toVC.view.frame.size.height);
+
+    CGRect leftRect = CGRectMake(nowRect.origin.x-nowRect.size.width, nowRect.origin.y, nowRect.size.width, nowRect.size.height);
+    CGRect rightRect = CGRectMake(nowRect.origin.x+nowRect.size.width, nowRect.origin.y, nowRect.size.width, nowRect.size.height);
+
+    CGRect newStartRect;
+    CGRect oldEndRect;
+    
+    if (fromRight) {
+        newStartRect = rightRect;
+        oldEndRect = leftRect;
+    } else {
+        newStartRect = leftRect;
+        oldEndRect = rightRect;
+    }
+    
+    oldEndRect = CGRectMake(oldEndRect.origin.x, originRect.origin.y, originRect.size.width, originRect.size.height);
+    toVC.view.frame = newStartRect;
+
+    [self transitionFromViewController:fromVC toViewController:toVC duration:duration options:options animations:^{
+        toVC.view.frame = nowRect;
+        fromVC.view.frame = oldEndRect;
+    } completion:^(BOOL finished) {
+        completion ? completion(finished) : nil;
+    }];
+}
+
+
+- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion {
+   
+    [self transitionFromRight:fromRight withFromViewController:fromVC toViewController:toVC duration:duration options:UIViewAnimationOptionTransitionNone completion:completion];
+}
+
+@end
