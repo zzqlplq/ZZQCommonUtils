@@ -60,7 +60,7 @@
 
 @implementation UIViewController (Transtion)
 
-- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^)(BOOL))completion {
+- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^__nullable)(BOOL))completion {
     
     CGRect originRect = fromVC.view.frame;
     CGRect nowRect = CGRectMake(originRect.origin.x, toVC.view.frame.origin.y, toVC.view.frame.size.width, toVC.view.frame.size.height);
@@ -91,7 +91,7 @@
 }
 
 
-- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion {
+- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration completion:(void (^__nullable)(BOOL finished))completion {
    
     [self transitionFromRight:fromRight withFromViewController:fromVC toViewController:toVC duration:duration options:UIViewAnimationOptionTransitionNone completion:completion];
 }

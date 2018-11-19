@@ -30,9 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (Transition)
 
-- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^)(BOOL finished))completion;
+- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^__nullable)(BOOL finished)) completion;
 
-- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion;
+- (void)transitionFromRight:(BOOL)fromRight withFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC duration:(NSTimeInterval)duration completion:(void (^ __nullable)( BOOL finished))completion;
 
 @end
 
