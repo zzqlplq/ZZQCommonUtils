@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol AlertController <NSObject>
 
-- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message confirmHandler:(void(^)(UIAlertAction *confirmAction))handler;
+- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message confirmHandler:(void(^)(UIAlertAction *confirmAction))handler;
 
-- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle confirmHandler:(void(^)(UIAlertAction *confirmAction))handler;
+- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message confirmTitle:(NSString *)confirmTitle confirmHandler:(void(^)(UIAlertAction *confirmAction))handler;
 
-- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelAction:(UIAlertAction *)cancelAction confirmAction:(UIAlertAction *)confirmAction;
+- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message cancelAction:(UIAlertAction *)cancelAction confirmAction:(UIAlertAction *)confirmAction;
 
 
 @end
