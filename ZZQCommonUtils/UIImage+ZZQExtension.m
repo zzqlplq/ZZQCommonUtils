@@ -24,6 +24,12 @@
 }
 
 
+- (UIImage *)rounded {
+    CGFloat radius = MIN(self.size.height, self.size.width) / 2;
+    return [self rounded:radius];
+}
+
+
 - (UIImage *)rounded:(CGFloat)radius {
     
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);

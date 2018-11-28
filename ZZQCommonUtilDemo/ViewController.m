@@ -23,6 +23,7 @@
     [super viewDidLoad];
 
     UIImage *image = [UIImage imageWithColor:[UIColor blueColor] size:CGSizeMake(40, 40)];
+    image = [image rounded];
     
     UIButton *sender = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     NSString *dateString = [[NSDate dateTomorrow] stringWithDateFormatter:@"yyyy-dd-mm"];

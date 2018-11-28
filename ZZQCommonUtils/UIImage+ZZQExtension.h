@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)imageWithFileName:(NSString *)name ofType:(NSString *)type;
 
+- (UIImage *)rounded;
+
 - (UIImage *)rounded:(CGFloat)radius;
 
 // 按比例缩放
