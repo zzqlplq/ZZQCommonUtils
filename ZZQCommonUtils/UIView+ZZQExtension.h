@@ -27,7 +27,7 @@
 // 设置圆角 clip
 - (void)rounded:(CGFloat)cornerRadius;
 
-// 通过
+// 通过 maskLayer
 - (void)maskLayerRounded:(CGFloat)cornerRadius;
 
 // 给特定角设置圆角

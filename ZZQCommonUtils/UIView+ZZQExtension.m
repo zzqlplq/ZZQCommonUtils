@@ -201,10 +201,11 @@
 }
 
 
-- (void)rounded:(CGFloat)cornerRadius andShadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
+- (void)rounded:(CGFloat)cornerRadius andShadowColor:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
     self.layer.cornerRadius = cornerRadius;
     [self shadow:shadowColor opacity:opacity radius:radius offset:offset];
 }
+
 
 
 - (void)shadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
