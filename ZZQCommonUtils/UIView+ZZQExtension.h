@@ -24,20 +24,23 @@
 @property (assign, nonatomic) CGPoint zq_origin;
 
 
-// 设置圆角
+// 设置圆角 clip
 - (void)rounded:(CGFloat)cornerRadius;
 
+// 通过
+- (void)maskLayerRounded:(CGFloat)cornerRadius;
+
 // 给特定角设置圆角
-- (void)round:(CGFloat)cornerRadius RectCorners:(UIRectCorner)rectCorner;
+- (void)maskLayerRounded:(CGFloat)cornerRadius cectCorners:(UIRectCorner)rectCorner;
 
 // 设置圆角和边框
-- (void)rounded:(CGFloat)cornerRadius width:(CGFloat)borderWidth color:(UIColor *)borderColor;
-
-// 设置圆角和阴影
-- (void)rounded:(CGFloat)cornerRadius andShadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;
+- (void)maskLayerRounded:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 // 设置边框
-- (void)border:(CGFloat)borderWidth color:(UIColor *)borderColor;
+- (void)maskLayerBorder:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+
+// 设置圆角和阴影
+- (void)rounded:(CGFloat)cornerRadius andShadowColor:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;
 
 // 设置阴影
 - (void)shadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;

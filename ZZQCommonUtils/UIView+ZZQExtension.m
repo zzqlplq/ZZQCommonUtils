@@ -152,11 +152,17 @@
 
 #pragma mark - layer
 - (void)rounded:(CGFloat)cornerRadius {
-    [self round:cornerRadius RectCorners:UIRectCornerAllCorners];
+    self.layer.cornerRadius = cornerRadius;
+    self.layer.masksToBounds = YES;
 }
 
 
-- (void)round:(CGFloat)cornerRadius RectCorners:(UIRectCorner)rectCorner {
+- (void)maskLayerRounded:(CGFloat)cornerRadius {
+    [self maskLayerRounded:0 borderWidth:0.f borderColor:[UIColor clearColor]];
+}
+
+
+- (void)maskLayerRounded:(CGFloat)cornerRadius rectCorners:(UIRectCorner)rectCorner {
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = self.bounds;
@@ -165,7 +171,7 @@
 }
 
 
-- (void)rounded:(CGFloat)cornerRadius width:(CGFloat)borderWidth color:(UIColor *)borderColor {
+- (void)maskLayerRounded:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
    
     UIBezierPath* maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
     
@@ -190,14 +196,14 @@
 }
 
 
-- (void)rounded:(CGFloat)cornerRadius andShadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
-    self.layer.cornerRadius = cornerRadius;
-    [self shadow:shadowColor opacity:opacity radius:radius offset:offset];
+- (void)maskLayerBorder:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    [self maskLayerRounded:0 borderWidth:borderWidth borderColor:borderColor];
 }
 
 
-- (void)border:(CGFloat)borderWidth color:(UIColor *)borderColor {
-    [self rounded:0 width:borderWidth color:borderColor];
+- (void)rounded:(CGFloat)cornerRadius andShadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
+    self.layer.cornerRadius = cornerRadius;
+    [self shadow:shadowColor opacity:opacity radius:radius offset:offset];
 }
 
 
