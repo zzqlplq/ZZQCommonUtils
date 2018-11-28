@@ -35,7 +35,9 @@
     [sender setImagePosition:ZZQImagePositionTop spacing:8];
     
     [sender addTarget:self action:@selector(senderClick:) forControlEvents:UIControlEventTouchUpInside];
-    [sender rounded:10 width:3 color:[UIColor yellowColor]];
+
+    [sender maskLayerRounded:10 borderWidth:3 borderColor:[UIColor yellowColor]];
+    //    [sender rounded:10 width:3 color:[UIColor yellowColor]];
  //   [sender border:3 color:[UIColor yellowColor]];
 //    [sender rounded:10];
 

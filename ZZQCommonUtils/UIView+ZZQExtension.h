@@ -31,7 +31,7 @@
 - (void)maskLayerRounded:(CGFloat)cornerRadius;
 
 // 给特定角设置圆角
-- (void)maskLayerRounded:(CGFloat)cornerRadius cectCorners:(UIRectCorner)rectCorner;
+- (void)maskLayerRounded:(CGFloat)cornerRadius rectCorners:(UIRectCorner)rectCorner;
 
 // 设置圆角和边框
 - (void)maskLayerRounded:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
