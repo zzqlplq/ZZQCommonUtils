@@ -35,14 +35,10 @@
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
 
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];
-    CGContextAddPath(context,path.CGPath);
-    CGContextClip(context);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
+    [path addClip];
     [self drawInRect:rect];
     
-    CGContextDrawPath(context, kCGPathFillStroke);
     UIImage * newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
