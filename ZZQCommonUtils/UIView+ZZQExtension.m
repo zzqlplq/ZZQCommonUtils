@@ -152,13 +152,13 @@
 
 #pragma mark - layer
 - (void)rounded:(CGFloat)cornerRadius {
-    [self rounded:cornerRadius width:0 color:nil];
+    [self round:cornerRadius RectCorners:UIRectCornerAllCorners];
 }
 
 
 - (void)round:(CGFloat)cornerRadius RectCorners:(UIRectCorner)rectCorner {
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
@@ -166,10 +166,27 @@
 
 
 - (void)rounded:(CGFloat)cornerRadius width:(CGFloat)borderWidth color:(UIColor *)borderColor {
-    self.layer.cornerRadius = cornerRadius;
-    self.layer.borderWidth = borderWidth;
-    self.layer.borderColor = [borderColor CGColor];
-    self.layer.masksToBounds = YES;
+   
+    UIBezierPath* maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+    
+    CAShapeLayer* maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
+    
+    if (borderWidth > 0) {
+
+        UIBezierPath *borderPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        
+        CAShapeLayer *borderLayer = [CAShapeLayer layer];
+        borderLayer.path = borderPath.CGPath;
+        borderLayer.fillColor = [UIColor clearColor].CGColor;
+        borderLayer.strokeColor = borderColor.CGColor;
+        borderLayer.lineWidth = borderWidth * 2; // path在线的中间，mask会遮住一半，所以 *2
+        borderLayer.frame = self.bounds;
+        
+        [self.layer addSublayer:borderLayer];
+    }
 }
 
 

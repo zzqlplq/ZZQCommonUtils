@@ -35,11 +35,13 @@
     [sender setImagePosition:ZZQImagePositionTop spacing:8];
     
     [sender addTarget:self action:@selector(senderClick:) forControlEvents:UIControlEventTouchUpInside];
-    //[sender rounded:8];
-    
+    [sender rounded:10 width:3 color:[UIColor yellowColor]];
+ //   [sender border:3 color:[UIColor yellowColor]];
+//    [sender rounded:10];
+
     [self.view addSubview:sender];
     
-    [sender rounded:10 andShadow:[UIColor blackColor] opacity:0.5 radius:5 offset:CGSizeMake(2, 10)];
+  //  [sender rounded:10 andShadow:[UIColor blackColor] opacity:0.5 radius:5 offset:CGSizeMake(2, 10)];
 }
 
 
