@@ -305,5 +305,36 @@ static const unsigned componentFlagsWithoutDetail = (NSCalendarUnitYear| NSCalen
 }
 
 
+#pragma mark - getter
+
+- (NSInteger)year {
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    return components.year;
+}
+
+- (NSInteger)month {
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    return components.month;
+}
+
+- (NSInteger)day {
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    return components.day;
+}
+
+- (NSInteger)hour {
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    return components.hour;
+}
+
+- (NSInteger)minute {
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    return components.minute;
+}
+
+- (NSInteger)second {
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    return components.second;
+}
 
 @end

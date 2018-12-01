@@ -85,6 +85,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDate *)dateWithFormat:(NSString *)format;
 
 
+@property (nonatomic, assign, readonly) NSInteger year;
+@property (nonatomic, assign, readonly) NSInteger month;
+@property (nonatomic, assign, readonly) NSInteger day;
+@property (nonatomic, assign, readonly) NSInteger hour;
+@property (nonatomic, assign, readonly) NSInteger minute;
+@property (nonatomic, assign, readonly) NSInteger second;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
