@@ -66,10 +66,18 @@ static const unsigned componentFlagsWithoutDetail = (NSCalendarUnitYear| NSCalen
 }
 
 
-- (NSString *)stringWithDateFormatter:(NSString *)format {
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = format;
-    return [formatter stringFromDate:self];
++ (NSDate *)dateWithDateString:(NSString *)dateString formatter:(NSString *)formatter {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:formatter];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    return date;
+}
+
+
+- (NSString *)stringWithDateFormatter:(NSString *)formatter {
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    dateFormatter.dateFormat = formatter;
+    return [dateFormatter stringFromDate:self];
 }
 
 

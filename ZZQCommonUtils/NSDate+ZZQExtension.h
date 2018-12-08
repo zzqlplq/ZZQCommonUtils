@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDate *)dateWithHoursBeforeNow:(NSInteger)hours;
 + (NSDate *)dateWithMinutesFromNow:(NSInteger)minutes;
 + (NSDate *)dateWithMinutesBeforeNow:(NSInteger)minutes;
++ (NSDate *)dateWithDateString:(NSString *)dateString formatter:(NSString *)formatter;
+
 
 - (NSString *)stringWithDateFormatter:(NSString *)formatter;
 
