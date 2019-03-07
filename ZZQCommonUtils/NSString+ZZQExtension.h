@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)addPrefix:(NSString *)prefix;
 
+- (NSString *)addSuffix:(NSString *)suffix;
 
 @end
 
@@ -22,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface NSString (Size)
+
+- (CGSize)getSizeWithFont:(UIFont *)font ofMaxSize:(CGSize)maxSize;
 
 - (CGFloat)getHeightWithFont:(UIFont *)font ofMaxSize:(CGSize)maxSize;
 - (CGFloat)getWidthWithFont:(UIFont *)font ofMaxSize:(CGSize)maxSize;

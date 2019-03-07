@@ -21,12 +21,31 @@
     return [prefix stringByAppendingString:self];
 }
 
+- (NSString *)addSuffix:(NSString *)suffix {
+    if (self.length < 1) {
+        return suffix;
+    }
+    if (suffix.length < 1) {
+        return self;
+    }
+    return [self stringByAppendingString:suffix];
+}
 
 
 @end
 
 
 @implementation NSString (Size)
+
+- (CGSize)getSizeWithFont:(UIFont *)font ofMaxSize:(CGSize)maxSize {
+    NSDictionary *attribute = @{NSFontAttributeName:font};
+    CGSize retSize = [self boundingRectWithSize:maxSize
+                                        options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                     attributes:attribute
+                                        context:nil].size;
+    return retSize;
+}
+
 
 - (CGFloat)getHeightWithFont:(UIFont *)font ofMaxSize:(CGSize)maxSize {
     CGSize size = [self getSizeWithFont:font ofMaxSize:maxSize];
@@ -53,14 +72,5 @@
     return size.width;
 }
 
-
-- (CGSize)getSizeWithFont:(UIFont *)font ofMaxSize:(CGSize)maxSize {
-    NSDictionary *attribute = @{NSFontAttributeName:font};
-    CGSize retSize = [self boundingRectWithSize:maxSize
-                                        options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                     attributes:attribute
-                                        context:nil].size;
-    return retSize;
-}
 
 @end
