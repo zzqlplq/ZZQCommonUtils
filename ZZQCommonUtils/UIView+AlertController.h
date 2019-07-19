@@ -16,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message confirmTitle:(NSString *)confirmTitle confirmHandler:(void(^)(UIAlertAction *confirmAction))handler;
 
-- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message cancelAction:(UIAlertAction *)cancelAction confirmAction:(UIAlertAction *)confirmAction;
+- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message cancelAction:(nullable UIAlertAction *)cancelAction confirmAction:(nullable UIAlertAction *)confirmAction;
 
+- (void)showSingleActionAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actionTitle:(NSString *)actionTitle action:(void(^)(UIAlertAction *action))handler;
 
 @end
 

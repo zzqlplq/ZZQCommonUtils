@@ -124,4 +124,38 @@
 }
 
 
++ (UIImage *)imageWithGradientColors:(NSArray*)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint size:(CGSize)size {
+    
+    if (colors.count < 0 ) return nil;
+    
+    UIImage *image = nil;
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    CFMutableArrayRef array = CFArrayCreateMutable(NULL, 0, NULL);
+    for (UIColor *color in colors) {
+        CFArrayAppendValue(array, color.CGColor);
+    }
+    
+    CGGradientRef colorGradient = CGGradientCreateWithColors(colorSpace, array, NULL);
+    
+    CGPoint start = CGPointMake(startPoint.x * size.width, startPoint.y * size.height);
+    CGPoint end = CGPointMake(endPoint.x * size.width, endPoint.y * size.height);
+    
+    CGContextDrawLinearGradient(context, colorGradient, start, end, kCGGradientDrawsBeforeStartLocation|kCGGradientDrawsAfterEndLocation);
+    
+    CFRelease(array);
+    CGColorSpaceRelease(colorSpace);
+    CGGradientRelease(colorGradient);
+    
+    image = UIGraphicsGetImageFromCurrentImageContext();//提取图片
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+
 @end

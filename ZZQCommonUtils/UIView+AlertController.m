@@ -23,7 +23,7 @@
 }
 
 
-- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message cancelAction:(UIAlertAction *)cancelAction confirmAction:(UIAlertAction *)confirmAction {
+- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message cancelAction:(nullable UIAlertAction *)cancelAction confirmAction:(nullable UIAlertAction *)confirmAction {
     
     if (cancelAction == nil && confirmAction == nil) {
         return;
@@ -36,6 +36,13 @@
     
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
+
+- (void)showSingleActionAlertWithTitle:(NSString *)title message:(NSString *)message actionTitle:(NSString *)actionTitle action:(void (^)(UIAlertAction * _Nonnull))handler {
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:actionTitle style:UIAlertActionStyleDefault handler:handler];
+    [self showAlertWithTitle:title message:message cancelAction:nil confirmAction:action];
+}
+
 
 @end
 
@@ -57,5 +64,12 @@
 
     [self.view showAlertWithTitle:title message:message cancelAction:cancelAction confirmAction:confirmAction];
 }
+
+- (void)showSingleActionAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actionTitle:(nonnull NSString *)actionTitle action:(nonnull void (^)(UIAlertAction * _Nonnull))handler {
+    
+    [self.view showSingleActionAlertWithTitle:title message:message actionTitle:actionTitle action:handler];
+}
+
+
 
 @end
