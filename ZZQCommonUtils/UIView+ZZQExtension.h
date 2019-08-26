@@ -35,9 +35,15 @@
 
 // 设置圆角和边框
 - (void)maskLayerRounded:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+// 设置圆角和边框
+- (void)rounded:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+
 
 // 设置边框
 - (void)maskLayerBorder:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+// 设置边框
+- (void)border:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+
 
 // 设置圆角和阴影
 - (void)rounded:(CGFloat)cornerRadius andShadowColor:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;

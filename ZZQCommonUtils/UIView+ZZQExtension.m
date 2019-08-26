@@ -196,8 +196,22 @@
 }
 
 
+- (void)rounded:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    
+    self.layer.cornerRadius = cornerRadius;
+    self.layer.borderWidth = borderWidth;
+    self.layer.borderColor = borderColor.CGColor;
+    self.layer.masksToBounds = YES;
+}
+
+
 - (void)maskLayerBorder:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
     [self maskLayerRounded:0 borderWidth:borderWidth borderColor:borderColor];
+}
+
+
+- (void)border:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    [self rounded:0 borderWidth:borderWidth borderColor:borderColor];
 }
 
 
