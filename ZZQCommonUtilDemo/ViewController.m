@@ -36,7 +36,9 @@
     
     [sender addTarget:self action:@selector(senderClick:) forControlEvents:UIControlEventTouchUpInside];
 
-    [sender maskLayerRounded:10 borderWidth:3 borderColor:[UIColor yellowColor]];
+//    [sender maskLayerRounded:10 borderWidth:3 borderColor:[UIColor yellowColor]];
+    [sender addGradientColors:@[[UIColor blueColor], [UIColor redColor]] startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 1)];
+    
     //    [sender rounded:10 width:3 color:[UIColor yellowColor]];
  //   [sender border:3 color:[UIColor yellowColor]];
 //    [sender rounded:10];

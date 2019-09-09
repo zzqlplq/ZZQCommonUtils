@@ -51,6 +51,7 @@
 // 设置阴影
 - (void)shadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;
 
+- (void)addGradientColors:(NSArray <UIColor *> *)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint;
 
 @end
 

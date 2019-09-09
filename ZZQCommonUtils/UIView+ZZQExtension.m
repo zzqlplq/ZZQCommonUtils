@@ -231,6 +231,23 @@
 }
 
 
+- (void)addGradientColors:(NSArray *)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint {
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer new];
+    
+    NSMutableArray *cgColors = [NSMutableArray array];
+    for (UIColor *color in colors) {
+        [cgColors addObject:(__bridge id)color.CGColor];
+    }
+    gradientLayer.colors = cgColors;
+    gradientLayer.startPoint = startPoint;
+    gradientLayer.endPoint = endPoint;
+    
+    gradientLayer.frame = self.bounds;
+    
+    [self.layer addSublayer:gradientLayer];
+}
+
 @end
 
 
