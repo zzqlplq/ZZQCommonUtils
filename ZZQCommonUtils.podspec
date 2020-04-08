@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZZQCommonUtils"
-  s.version      = "0.2.5"
+  s.version      = "0.2.6"
   s.summary      = "Common Utils"
 
   # This description is used to generate tags and improve search results.
