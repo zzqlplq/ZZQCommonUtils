@@ -46,6 +46,11 @@
     [self.view addSubview:sender];
     
   //  [sender rounded:10 andShadow:[UIColor blackColor] opacity:0.5 radius:5 offset:CGSizeMake(2, 10)];
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(20, 400, 300, 1)];
+    [self.view addSubview:lineView];
+    [lineView converViewToDashedLineWithColor:[UIColor lightGrayColor]];
+    
 }
 
 

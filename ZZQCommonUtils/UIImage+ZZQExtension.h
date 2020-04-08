@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIImage *)imageTintedWithColor:(UIColor *)color;
 
-+ (UIImage *)imageWithGradientColors:(NSArray*)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint size:(CGSize)size ;
++ (UIImage *)imageWithGradientColors:(NSArray*)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint size:(CGSize)size;
 
 
 @end

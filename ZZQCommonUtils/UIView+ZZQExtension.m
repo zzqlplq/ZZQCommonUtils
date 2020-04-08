@@ -248,6 +248,29 @@
     [self.layer addSublayer:gradientLayer];
 }
 
+
+- (void)converViewToDashedLineWithColor:(UIColor *)lineColor {
+    [self convertViewToDashedLineWithLineLength:4 lineSpacing:2 lineColor:lineColor];
+}
+
+
+- (void)convertViewToDashedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor {
+    
+    CAShapeLayer *dottedLayer = [CAShapeLayer layer];
+    [dottedLayer setFillColor:[UIColor clearColor].CGColor];
+    [dottedLayer setStrokeColor:lineColor.CGColor];
+    [dottedLayer setLineWidth:CGRectGetHeight(self.frame)];
+    [dottedLayer setLineDashPattern:[NSArray arrayWithObjects:@(lineLength), @(lineSpacing), nil]];
+    
+    UIBezierPath *dottedPath = [UIBezierPath bezierPath];
+    [dottedPath moveToPoint: CGPointMake(0, 0)];
+    [dottedPath addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), 0)];
+    
+    dottedLayer.path = dottedPath.CGPath;
+    [self.layer addSublayer:dottedLayer];
+}
+
+
 @end
 
 

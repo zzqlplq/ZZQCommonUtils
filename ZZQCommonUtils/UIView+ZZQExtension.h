@@ -44,14 +44,23 @@
 // 设置边框
 - (void)border:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
-
 // 设置圆角和阴影
 - (void)rounded:(CGFloat)cornerRadius andShadowColor:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;
 
 // 设置阴影
 - (void)shadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;
 
+// 添加渐变色
 - (void)addGradientColors:(NSArray <UIColor *> *)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint;
+
+
+// 变为虚线 默认为 [@4, @2]
+- (void)converViewToDashedLineWithColor:(UIColor *)lineColor;
+
+- (void)convertViewToDashedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor;
+
+
+
 
 @end
 
