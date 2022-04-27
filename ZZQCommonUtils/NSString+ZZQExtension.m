@@ -36,6 +36,11 @@
     return @"this is dev branch";
 }
 
+
+- (NSString *)otherTest {
+    return @"this is other test";
+}
+
 @end
 
 

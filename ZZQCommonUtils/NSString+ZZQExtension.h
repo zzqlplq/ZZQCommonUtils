@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)branchTest;
 
+- (NSString *)otherTest;
+
 @end
 
 
