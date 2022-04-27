@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)addSuffix:(NSString *)suffix;
 
+- (NSString *)branchTest;
+
 @end
 
 

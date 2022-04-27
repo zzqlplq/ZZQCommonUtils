@@ -32,6 +32,10 @@
 }
 
 
+- (NSString *)branchTest {
+    return @"this is dev branch";
+}
+
 @end
 
 
